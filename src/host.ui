@@ -26,13 +26,13 @@
     <property name="title">
      <string>工具介绍</string>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>30</y>
-       <width>74</width>
-       <height>82</height>
+       <y>21</y>
+       <width>91</width>
+       <height>101</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -42,7 +42,7 @@
       <item>
        <widget class="QLabel" name="label_version">
         <property name="text">
-         <string>上位机版本号</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;上位机版本号&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -88,13 +88,13 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>30</y>
+       <x>110</x>
+       <y>21</y>
        <width>56</width>
-       <height>82</height>
+       <height>101</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -222,13 +222,13 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>180</y>
+      <y>170</y>
       <width>171</width>
       <height>361</height>
      </rect>
     </property>
     <property name="title">
-     <string>配置</string>
+     <string>配置(mm)</string>
     </property>
     <widget class="QLabel" name="label_distance_dream">
      <property name="geometry">
@@ -240,7 +240,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>理想距离</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;理想距离&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_distance_min">
@@ -253,7 +253,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>允许最小</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;允许最小&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_distance_max">
@@ -266,7 +266,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>允许最大</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;允许最大&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_state_connect">
@@ -279,7 +279,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>连接状态</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;连接状态&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_dis_dream">
@@ -322,6 +322,19 @@
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="button_modify_confirm">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>210</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>确认</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame">
     <property name="geometry">
@@ -338,7 +351,7 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>20</x>

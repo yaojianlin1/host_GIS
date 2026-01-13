@@ -1,0 +1,20 @@
+
+/* 输入框聚焦状态 */
+QLineEdit:focus {
+    border: 1px solid #4299e1;
+    background-color: #f7fafc;
+    outline: none;
+}
+
+/* 输入框悬停状态 */
+QLineEdit:hover {
+    border: 1px solid #cbd5e0;
+    background-color: #f7fafc;
+}
+
+/* 只读状态 */
+QLineEdit:read-only {
+    background-color: #f8fafc;
+    color: #718096;
+    border: 1px solid #e2e8f0;
+}

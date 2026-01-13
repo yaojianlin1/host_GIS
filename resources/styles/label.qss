@@ -1,0 +1,9 @@
+#groupBox_introduction #label_version,
+#groupBox_introduction #label,
+#groupBox_introduction #label_company {
+    border-width: 1px;
+    border-style: solid;
+    border-color: chartreuse;
+}
+
+
