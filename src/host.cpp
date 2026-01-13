@@ -2,13 +2,14 @@
 #include "QFile"
 #include "QString"
 #include <QDebug>
+
 host::host(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui_host)
 {
     ui->setupUi(this);
     this->setIntroduction();
-
+    load_path();
     QString StyleSheet;
     QFile file_label("../resources/styles/label.qss");
     if (file_label.open(QIODevice::ReadOnly)) {
@@ -37,6 +38,10 @@ void host::setIntroduction(void){
     this->ui->label_content_person->setText("姚建林");
     this->ui->label_content_version->setText(this->version);
 
+    //下面这部分虽然不是introduction框里的，但为了方便，写一块了
+    this->ui->lineEdit_road_store->setReadOnly(true);
+    this->ui->lineEdit_state_connect->setReadOnly(true);
+    
 }
 
 
@@ -81,6 +86,39 @@ void host::button_modify_confirm_clicked(void){
 
 void host::connect_func_signal(void){
     connect(this->ui->button_modify_confirm,&QPushButton::clicked,this,&host::button_modify_confirm_clicked);
+    connect(this->ui->button_browse,&QPushButton::clicked,this,&host::button_browse_clicked);
 
+}
+
+void host::button_browse_clicked(void){
+    QString selectedDir = QFileDialog::getExistingDirectory(
+        this,
+        tr("选择文件夹"),
+        QDir::currentPath(),
+        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+    );
+    if(!selectedDir.isEmpty()){
+        this->ui->lineEdit_road_store->setText(selectedDir);
+        qDebug()<< "selectedDir:" <<selectedDir;
+        save_path();
+    }
+}
+
+
+void host::save_path(void){
+    QSettings settings("../config/config.ini",QSettings::IniFormat);
+
+    QString savepath = this->ui->lineEdit_road_store->text();
+    settings.setValue("FileSavePath",savepath);
+}
+
+
+void host::load_path(void){
+    QSettings settings("../config/config.ini",QSettings::IniFormat);
+
+    QString last_path = settings.value("FileSavePath").toString();
+    if(!last_path.isEmpty()){
+        this->ui->lineEdit_road_store->setText(last_path);
+    }
 
 }

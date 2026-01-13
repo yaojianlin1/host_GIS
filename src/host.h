@@ -2,6 +2,8 @@
 #include "ui_host.h"
 #include <QMainWindow>
 #include "QString"
+#include <QSettings>
+#include <QFileDialog>
 class host : public QMainWindow {
     Q_OBJECT
     
@@ -21,6 +23,10 @@ private:
 
     void connect_func_signal(void);
 
+    void button_browse_clicked(void);
+    void save_path(void);
+    void load_path(void);
+
 private:
     Ui_host* ui;
     QString version = "1.0";
@@ -28,5 +34,8 @@ private:
     int dis_min;//mm
     int dis_max;//max
     bool status_connect;
+
+    
+
     
 };
