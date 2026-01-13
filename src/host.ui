@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>914</width>
+    <height>644</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -60,7 +60,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_person">
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;开发人员&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -154,9 +154,9 @@
    <widget class="QGroupBox" name="groupBox_configuration_basic">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>20</y>
-      <width>481</width>
+      <x>200</x>
+      <y>30</y>
+      <width>691</width>
       <height>61</height>
      </rect>
     </property>
@@ -187,7 +187,7 @@
       <rect>
        <x>80</x>
        <y>30</y>
-       <width>331</width>
+       <width>561</width>
        <height>20</height>
       </rect>
      </property>
@@ -201,7 +201,7 @@
     <widget class="QPushButton" name="button_browse">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>650</x>
        <y>30</y>
        <width>31</width>
        <height>24</height>
@@ -224,7 +224,7 @@
       <x>10</x>
       <y>170</y>
       <width>171</width>
-      <height>361</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="title">
@@ -325,8 +325,8 @@
     <widget class="QPushButton" name="button_modify_confirm">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>210</y>
+       <x>80</x>
+       <y>230</y>
        <width>75</width>
        <height>24</height>
       </rect>
@@ -336,13 +336,13 @@
      </property>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>190</x>
       <y>110</y>
-      <width>591</width>
-      <height>421</height>
+      <width>701</width>
+      <height>481</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -351,43 +351,80 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>134</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="spacing">
-       <number>10</number>
+    <widget class="QWidget" name="stackedWidgetPage1">
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>134</width>
+        <height>25</height>
+       </rect>
       </property>
-      <item>
-       <widget class="QLabel" name="label_distance_current">
-        <property name="text">
-         <string>当前距离</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Orientation::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLCDNumber" name="lcdNumber"/>
-      </item>
-     </layout>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_distance_current">
+         <property name="text">
+          <string>当前距离</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLCDNumber" name="lcdNumber_current_distance"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>156</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_num_of_sensor">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;当前传感器编号&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLCDNumber" name="lcdNumber_num_of_sensor">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -396,7 +433,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>914</width>
      <height>33</height>
     </rect>
    </property>

@@ -57,15 +57,15 @@ void host::button_confirm_clicked(void){
 
     QString tmp =  this->ui->lineEdit_dis_dream->text();
     this->dis_dream = tmp.toInt();
-    qDebug()<<"dis_dream"<<this->dis_dream<<"\n";
+    qDebug()<<"dis_dream"<<this->dis_dream;
 
     tmp = this->ui->lineEdit_dis_max->text();
     this->dis_max = tmp.toInt();
-    qDebug()<<"dis_max"<<this->dis_max<<"\n";
+    qDebug()<<"dis_max"<<this->dis_max;
 
     tmp = this->ui->lineEdit_dis_min->text();
     this->dis_min = tmp.toInt();
-    qDebug()<<"dis_min"<<this->dis_min<<"\n";
+    qDebug()<<"dis_min"<<this->dis_min;
 }
 
 void host::button_modify_clicked(void){
